@@ -1,0 +1,93 @@
+.container {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.night-mode {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 5px solid rgb(228, 219, 219);
+  border-radius: 3px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.night-mode::before,
+.night-mode::after {
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: -150px;
+  top: -150px;
+  transition: all 1s ease;
+}
+
+.night-mode::before {
+  z-index: 1;
+  pointer-events: none;
+}
+
+@supports (mix-blend-mode: difference) {
+  .night-mode::before {
+    background-color: white;
+    mix-blend-mode: difference;
+  }
+}
+
+.night-mode::after {
+  mix-blend-mode: difference;
+  background-color: black;
+  z-index: -1;
+}
+
+@supports (mix-blend-mode: difference) {
+  .night-mode:after {
+    background-color: white;
+  }
+}
+
+@supports not (mix-blend-mode: difference) {
+   .night-mode--active {
+    color: white;
+  }
+}
+
+.night-mode--active:before, .night-mode--active:after {
+  transform: scale(20);
+}
+
+.night-mode--noblend {
+  isolation: isolate;
+}
+
+.night-mode__button {
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: -150px;
+  top: -150px;
+  transition: all 1s ease;
+  background-color: black;
+  border: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.night-mode--active .night-mode__button { 
+  background-color: white;
+}
