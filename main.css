@@ -4,21 +4,11 @@
   --green: #008000;
 }
 
-
 .container {
   overflow: hidden;
   background-color: var(--background-color);
   color: var(--color);
 }
-
-/* @media screen and (min-width: 768px){
-  :root {
-    --background-color: green;
-    --color: #000000;
-    --green: #008000;
-  }
-} */
-
 
 h1 {
   font-size: 50px;
@@ -115,28 +105,17 @@ h2 {
 } */
 
 /* when you turn light mode on */
-/* @media (prefer-color-schem: light){
+@media (prefers-color-scheme: light) {
   :root {
     --background-color: pink;
-    --color: #000000;
-    --green: #008000;
-  }
-} */
-
-/* when you turn dark mode on */
-@media (prefers-color-scheme: dark) {
-  root {
-    --background-color: green;
   }
 }
 
-/* @media (prefer-color-schem: dark){ */
-  /* :root {
-    --background-color: #000000;
+/* when you turn dark mode on */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: green;
     --color: #ffffff;
-    --green: #FFC0CB;
-  } */
-
-  
-/* } */
+  }
+}
 
