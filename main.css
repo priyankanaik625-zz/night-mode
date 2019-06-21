@@ -1,3 +1,9 @@
+:root {
+  --background-color: #ffffff;
+  --color: #000000;
+  --green: #008000;
+}
+
 .container {
   overflow: hidden;
 }
@@ -21,7 +27,7 @@ h2 {
   position: relative;
 }
 
-.night-mode::before,
+/* .night-mode::before,
 .night-mode::after {
   content: "";
   border-radius: 50%;
@@ -41,35 +47,39 @@ h2 {
 
 @supports (mix-blend-mode: difference) {
   .night-mode::before {
-    background-color: white;
+    background-color:var(--background-color);
     mix-blend-mode: difference;
   }
 }
 
 .night-mode::after {
   mix-blend-mode: difference;
-  background-color: black;
+  background-color: var(--color);
   z-index: -1;
 }
 
 @supports (mix-blend-mode: difference) {
   .night-mode:after {
-    background-color: white;
+    background-color: var(--background-color);
   }
 }
 
 @supports not (mix-blend-mode: difference) {
    .night-mode--active {
-    color: white;
+    color: var(--background-color);
   }
 }
 
 .night-mode--active:before, .night-mode--active:after {
   transform: scale(20);
-}
+} */
 
 .night-mode--noblend {
   isolation: isolate;
+}
+
+.night-mode__heading {
+  color: var(--green);
 }
 
 .night-mode__button {
@@ -82,12 +92,29 @@ h2 {
   right: -150px;
   top: -150px;
   transition: all 1s ease;
-  background-color: black;
+  background-color: var(--color);
   border: 0;
   z-index: 1;
   cursor: pointer;
 }
 
-.night-mode--active .night-mode__button { 
+/* .night-mode--active .night-mode__button { 
   background-color: white;
+} */
+
+/* when you turn light mode on */
+@media (prefer-color-schem: light){
+  :root {
+    --background-color: #ffffff;
+    --color: #000000;
+  }
 }
+
+/* when you turn dark mode on */
+@media (prefer-color-schem: dark){
+  :root {
+    --background-color: #000000;
+    --color: #ffffff;
+  }
+}
+
