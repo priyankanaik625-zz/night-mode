@@ -1,21 +1,21 @@
 body {
-  background-color: red;
+  background-color: pink;
 }
 
 body.night {
   background-color: green;
 }
 
-:root {
+/* :root {
   --background-color: pink;
   --color: #000000;
   --green: #008000;
-}
+} */
 
 .container {
   overflow: hidden;
   /* background-color: var(--background-color); */
-  color: var(--color);
+  /* color: var(--color); */
 }
 
 h1 {
@@ -113,17 +113,17 @@ h2 {
 } */
 
 /* when you turn light mode on */
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     --background-color: pink;
   }
-}
+} */
 
 /* when you turn dark mode on */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background-color: green;
     --color: #ffffff;
   }
-}
+} */
 
