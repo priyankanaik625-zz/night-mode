@@ -16,6 +16,7 @@ const activateDarkMode = () => {
 	for (k in darkTheme) {
 		rootElement.style.setProperty(k, darkTheme[k]);
 	}
+	console.log("this is dark mode");
 };
 
 // Light Mode
@@ -29,6 +30,7 @@ const activateLightMode = () => {
 	for (k in darkTheme) {
 		rootElement.style.setProperty(k, lightTheme[k]);
 	}
+	console.log("this is Light mode");
 };
 
 const setColorScheme = () => {

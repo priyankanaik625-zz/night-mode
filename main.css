@@ -1,11 +1,13 @@
 :root {
-  --background-color: #ffffff;
+  --background-color: pink;
   --color: #000000;
   --green: #008000;
 }
 
 .container {
   overflow: hidden;
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 h1 {
@@ -105,8 +107,9 @@ h2 {
 /* when you turn light mode on */
 @media (prefer-color-schem: light){
   :root {
-    --background-color: #ffffff;
+    --background-color: pink;
     --color: #000000;
+    --green: #008000;
   }
 }
 
@@ -115,6 +118,7 @@ h2 {
   :root {
     --background-color: #000000;
     --color: #ffffff;
+    --green: #FFC0CB;
   }
 }
 
