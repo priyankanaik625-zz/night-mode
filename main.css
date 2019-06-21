@@ -6,7 +6,7 @@
 
 .container {
   overflow: hidden;
-  background-color: var(--background-color);
+  background-color: red;
   color: var(--color);
 }
 
@@ -114,15 +114,19 @@ h2 {
 } */
 
 /* when you turn dark mode on */
-@media screen and (prefer-color-schem: dark){
-  :root {
+@media (prefers-color-scheme: dark) {
+  .container {
+    --background-color: green;
+  }
+}
+
+/* @media (prefer-color-schem: dark){ */
+  /* :root {
     --background-color: #000000;
     --color: #ffffff;
     --green: #FFC0CB;
-  }
+  } */
 
-  .container {
-    --background-color: blue;
-  }
-}
+  
+/* } */
 
