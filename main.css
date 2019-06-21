@@ -105,20 +105,24 @@ h2 {
 } */
 
 /* when you turn light mode on */
-@media (prefer-color-schem: light){
+/* @media (prefer-color-schem: light){
   :root {
     --background-color: pink;
     --color: #000000;
     --green: #008000;
   }
-}
+} */
 
 /* when you turn dark mode on */
-@media (prefer-color-schem: dark){
+@media screen and (prefer-color-schem: dark){
   :root {
     --background-color: #000000;
     --color: #ffffff;
     --green: #FFC0CB;
+  }
+
+  .container {
+    --background-color: blue;
   }
 }
 
