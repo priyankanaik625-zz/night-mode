@@ -13,6 +13,6 @@ var isNight = () => {
 	return date.getHours() > 22 || date.getHours() < 6;
 };
 
-isNight()
+isNight
 	? document.body.setAttribute("data-theme", "dark")
 	: document.body.removeAttribute("data-theme");
