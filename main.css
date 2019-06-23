@@ -1,129 +1,82 @@
+@import 'switch.css';
+
+:root {
+  --background-color: #ffffff;
+}
+
 body {
-  background-color: pink;
-}
-
-body.night {
-  background-color: green;
-}
-
-/* :root {
-  --background-color: pink;
-  --color: #000000;
-  --green: #008000;
-} */
-
-.container {
+  padding: 100px;
+  background-color: var(--background-color);
   overflow: hidden;
-  /* background-color: var(--background-color); */
-  /* color: var(--color); */
 }
 
-h1 {
+.night-mode__headline {
   font-size: 50px;
+  color: green;
 }
 
-h2 {
+.night-mode__heading {
   font-size: 30px;
 }
 
+.night-mode--logo {
+  height: 130px;
+  width: 130px;
+}
+
+.night-mode--text {
+  font-size: 18px;
+  line-height: 25px;
+  max-width: 600px;
+}
+
 .night-mode {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  border: 5px solid rgb(228, 219, 219);
   border-radius: 3px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
 
-/* .night-mode::before,
-.night-mode::after {
+[data-theme="dark"]::before,
+[data-theme="dark"]::after {
   content: "";
-  border-radius: 50%;
   display: block;
-  width: 300px;
-  height: 300px;
   position: absolute;
-  right: -150px;
-  top: -150px;
-  transition: all 1s ease;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
 }
 
-.night-mode::before {
+[data-theme="dark"]::before {
   z-index: 1;
   pointer-events: none;
-}
+} 
 
 @supports (mix-blend-mode: difference) {
-  .night-mode::before {
-    background-color:var(--background-color);
+  [data-theme="dark"]::before {
+    background-color: #ffffff;
     mix-blend-mode: difference;
   }
 }
 
-.night-mode::after {
-  mix-blend-mode: difference;
-  background-color: var(--color);
+[data-theme="dark"]::after {
+  background-color: #000000;
   z-index: -1;
-}
+} 
 
 @supports (mix-blend-mode: difference) {
-  .night-mode:after {
-    background-color: var(--background-color);
+  [data-theme="dark"]:after {
+    background-color: #ffffff;
   }
-}
+} 
 
-@supports not (mix-blend-mode: difference) {
-   .night-mode--active {
-    color: var(--background-color);
-  }
-}
-
-.night-mode--active:before, .night-mode--active:after {
-  transform: scale(20);
-} */
-
-.night-mode--noblend {
-  isolation: isolate;
-}
-
-.night-mode__heading {
-  color: var(--green);
-}
-
-.night-mode__button {
-  content: "";
-  border-radius: 50%;
-  display: block;
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  right: -150px;
-  top: -150px;
-  transition: all 1s ease;
-  background-color: var(--color);
-  border: 0;
-  z-index: 1;
-  cursor: pointer;
-}
-
-/* .night-mode--active .night-mode__button { 
-  background-color: white;
-} */
-
-/* when you turn light mode on */
-/* @media (prefers-color-scheme: light) {
+/* switch to darkTheme if OS has Dark mode turned on */
+ @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: pink;
-  }
-} */
-
-/* when you turn dark mode on */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: green;
+    --background-color: black;
     --color: #ffffff;
   }
-} */
-
+}
