@@ -15,6 +15,8 @@ const isNight = () => {
 
 if (isNight()) {
 	document.body.setAttribute("data-theme", "dark");
+	themeSwitch.checked = true;
 } else {
 	document.body.removeAttribute("data-theme");
+	themeSwitch.checked = false;
 }
