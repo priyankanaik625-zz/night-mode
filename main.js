@@ -10,7 +10,8 @@ themeSwitch.addEventListener("change", event => {
 // Switch to dark theme depending upon day and night
 const isNight = () => {
 	var date = new Date();
-	return date.getHours() > 22 || date.getHours() < 6;
+	console.log(date.getHours());
+	return date.getHours() > 10 || date.getHours() < 6;
 };
 
 if (isNight()) {
